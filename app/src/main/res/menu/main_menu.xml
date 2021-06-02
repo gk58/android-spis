@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+tools:context="pl.kosim.spis.MainActivity">
+<item
+    android:id="@+id/action_nowy_spis"
+    android:orderInCategory="100"
+    android:title="Nowy spis"
+    app:showAsAction="never" />
+<item
+    android:id="@+id/action_pobierz_spis"
+    android:orderInCategory="100"
+    android:title="Pobierz spis.json"
+    app:showAsAction="never" />
+<item
+    android:id="@+id/action_test"
+    android:orderInCategory="100"
+    android:title="Test"
+    app:showAsAction="never" />
+<item
+    android:id="@+id/action_odswiez"
+    android:orderInCategory="100"
+    android:title="Odswież"
+    app:showAsAction="never" />
+
+</menu>
