@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <Preference
+        android:key="version"
+        android:title="Build version"
+        android:summary="1.2.345"/>
+    <EditTextPreference
+        android:defaultValue="192.168.0.106"
+        android:key="ip_address"
+        android:singleLine="true"
+        android:title="Edit IP address"
+        />
+</PreferenceScreen>

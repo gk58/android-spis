@@ -1,12 +1,14 @@
 package pl.kosim.spis.dao;
 
 import android.app.Application;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
 
-import org.json.JSONException;
+import androidx.preference.PreferenceManager;
+
 import org.json.JSONObject;
 
 import java.io.BufferedInputStream;
@@ -40,7 +42,8 @@ public class SpisManager extends Application {
     private static final int DB_VER = 3;
 //    private static final String SPIS_URL = "http://10.2.40.198:8080/static/";
 //    private static final String SPIS_URL = "http://192.168.1.106:8080/kosim/";
-    private static final String SPIS_URL = "http://192.168.0.106:8080/kosim/";
+//    private static final String
+    public static String SPIS_URL;
 
     public static final String SPIS_PLIK = "spis";
 //    public static final String SPISY_PLIK_SEPARATOR = "|";
@@ -102,6 +105,11 @@ public class SpisManager extends Application {
         nawigacje.add(29,new Nawigacja(new Licznik(Media.ENERGIA,     Lokal.DOM), 30, 31 ));
         nawigacje.add(30,new Nawigacja(new Licznik(Media.GAZ,         Lokal.DOM), 31, 29 ));
         nawigacje.add(31,new Nawigacja(new Licznik(Media.WODA_ZIMNA,  Lokal.DOM), 29, 30 ));
+
+        /* ustawienia */
+        SharedPreferences sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this /* Activity context */);
+        SPIS_URL = sharedPreferences.getString("ip_address", "192.168.0.106");
+        Log.d(TAG, "SPIS_URL: "+SPIS_URL);
 
         /* przygotowanie bazy danych */
         SQLiteOpenHelper dbHelper = new SQLiteOpenHelper( getApplicationContext(),DB_NAME,null,DB_VER) {

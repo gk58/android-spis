@@ -1,11 +1,5 @@
 package pl.kosim.spis;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -14,6 +8,11 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import pl.kosim.spis.adapter.ListaSpisowAdapter;
 import pl.kosim.spis.dao.SpisManager;
@@ -59,8 +58,8 @@ public class MainActivity extends AppCompatActivity implements Oczekujacy {
             case R.id.action_pobierz_spis:
                 pobierzSpis();
                 return false;
-            case R.id.action_test:
-                test();
+            case R.id.action_ustawienia:
+                ustawienia();
                 return false;
             case R.id.action_odswiez:
                 mAdapter.notifyDataSetChanged();
@@ -110,7 +109,13 @@ public class MainActivity extends AppCompatActivity implements Oczekujacy {
         dialog.show();
     }
 
-   private void test() {
+    private void ustawienia() {
+        Log.d(TAG, "ustawienia: ");
+        Intent intent = new Intent(this, UstawieniaActivity.class);
+        startActivity(intent);
+    }
+
+    private void test() {
         Log.d(TAG, "test: ");
     }
 

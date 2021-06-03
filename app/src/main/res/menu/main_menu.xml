@@ -14,14 +14,13 @@ tools:context="pl.kosim.spis.MainActivity">
     android:title="Pobierz spis.json"
     app:showAsAction="never" />
 <item
-    android:id="@+id/action_test"
-    android:orderInCategory="100"
-    android:title="Test"
-    app:showAsAction="never" />
-<item
     android:id="@+id/action_odswiez"
     android:orderInCategory="100"
     android:title="Odswież"
     app:showAsAction="never" />
+<item android:id="@+id/action_ustawienia"
+    android:title="Ustawienia"
+    android:orderInCategory="999" />
+
 
 </menu>
