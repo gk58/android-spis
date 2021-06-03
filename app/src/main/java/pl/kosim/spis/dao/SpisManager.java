@@ -39,7 +39,8 @@ public class SpisManager extends Application {
     private static final String DB_NAME = "SPIS";
     private static final int DB_VER = 3;
 //    private static final String SPIS_URL = "http://10.2.40.198:8080/static/";
-    private static final String SPIS_URL = "http://192.168.1.106:8080/kosim/";
+//    private static final String SPIS_URL = "http://192.168.1.106:8080/kosim/";
+    private static final String SPIS_URL = "http://192.168.0.106:8080/kosim/";
 
     public static final String SPIS_PLIK = "spis";
 //    public static final String SPISY_PLIK_SEPARATOR = "|";

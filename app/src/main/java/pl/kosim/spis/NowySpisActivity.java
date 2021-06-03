@@ -62,6 +62,7 @@ public class NowySpisActivity extends AppCompatActivity {
         String komunikat = SpisManager.get().utworzSpis(selectedDate);
         if( komunikat.length()==0 ) {
             Intent intent = new Intent(this, SpisActivity.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         } else {
             Toast toast = Toast.makeText(getApplicationContext(),komunikat,Toast.LENGTH_LONG);
